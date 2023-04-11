@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../geofence/geofence.dart';
@@ -10,16 +12,16 @@ part 'project.g.dart';
 class Project with _$Project {
   factory Project({
     required int id,
-    int? companyId,
+    @JsonKey(name: 'company_id') int? companyId,
     required String name,
     String? code,
     String? description,
     required String status,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+    @JsonKey(name: 'created_at') required DateTime createdAt,
+    @JsonKey(name: 'updated_at') required DateTime updatedAt,
     Geofence? geofence,
     Location? location,
-    Geofence? locationGeofence,
+    @JsonKey(name: 'location_geofence') Geofence? locationGeofence,
   }) = _Project;
 
   factory Project.fromJson(Map<String, dynamic> json) =>
