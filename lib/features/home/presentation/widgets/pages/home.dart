@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 part 'home_mobile.dart';
@@ -13,7 +14,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
       mobile: (mobileContext) => const HomeMobileWidget(),
-      tablet: (tabletContext) => const HomeTabletWidget(),
+      // tablet: (tabletContext) => const HomeTabletWidget(),
     );
   }
 }
