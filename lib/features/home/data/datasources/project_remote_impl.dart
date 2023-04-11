@@ -30,7 +30,10 @@ class ProjectRemoteDataSourceImpl extends ProjectRemoteDataSource {
           response.data as Map<String, dynamic>);
     } on DioError catch (dioError) {
       throw DioErrorHandler.handle(dioError: dioError);
-    } catch (e) {
+    } catch (e, trace) {
+      print(e);
+      print(trace);
+
       throw AppException.unknownException(
           message: AppFailureMessages.kUnknownError);
     }
