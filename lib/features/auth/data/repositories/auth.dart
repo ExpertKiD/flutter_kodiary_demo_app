@@ -3,7 +3,6 @@ import 'package:app/core/failures/app_failures.dart';
 import 'package:app/features/auth/data/datasources/auth_local.dart';
 import 'package:app/features/auth/domain/repositories/auth.dart';
 import 'package:dartz/dartz.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../core/constants/app_failure_messages.dart';
@@ -38,7 +37,8 @@ class AuthRepositoryImpl extends AuthRepository {
         final user = UserModel(
           idToken: detail.token,
           refreshToken: '',
-          fcmToken: await FirebaseMessaging.instance.getToken() ?? '',
+          fcmToken:  '',
+          // fcmToken: await FirebaseMessaging.instance.getToken() ?? '',
         );
 
         // Save the user
@@ -82,7 +82,8 @@ class AuthRepositoryImpl extends AuthRepository {
         final user = UserModel(
           idToken: detail.token,
           refreshToken: '',
-          fcmToken: await FirebaseMessaging.instance.getToken() ?? '',
+          fcmToken:  '',
+          // fcmToken: await FirebaseMessaging.instance.getToken() ?? '',
         );
 
         // Save the user
