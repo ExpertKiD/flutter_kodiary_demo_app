@@ -11,9 +11,17 @@ class HomeMobileWidget extends StatelessWidget {
         builder: (builderContext, state) {
           return state.maybeMap(
             loaded: (value) {
-              return const Center(
-                child: Text('Data loaded'),
-              );
+              final projects = value.response.projects;
+
+              return ListView.separated(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  itemBuilder: (context, index) {
+                    return ProjectTile(project: projects[index]);
+                  },
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(height: 8),
+                  itemCount: projects.length);
             },
             loadFailure: (value) {
               return FailedToLoadData(

@@ -1,4 +1,5 @@
 import 'package:app/core/widgets/atoms/failed_retry/failed_retry.dart';
+import 'package:app/features/home/presentation/widgets/atoms/project_tile.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
